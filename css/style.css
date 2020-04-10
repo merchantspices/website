@@ -146,7 +146,7 @@ ul,
 li,
 ol {
     margin: 0px;
-    padding: 0px;
+    padding: 2px;
     list-style: none;
 }
 
@@ -950,6 +950,16 @@ body {
 .tab-menu .is-active p {
     color: #fff;
 }
+
+/*------------------------------------------------------------------
+    PRODUCTS AREA
+-------------------------------------------------------------------*/
+
+.product-category-heading h3 {
+    font-size: 24px;
+    font-family: 'nautilus_pompiliusregular';
+}
+
 
 /*------------------------------------------------------------------
     TEAM AREA
