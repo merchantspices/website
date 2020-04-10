@@ -955,9 +955,14 @@ body {
     PRODUCTS AREA
 -------------------------------------------------------------------*/
 
-.product-category-heading h3 {
+.products {
+    text-align: center;
+}
+
+.products h3 {
     font-size: 24px;
     font-family: 'nautilus_pompiliusregular';
+    margin-top: 15px;
 }
 
 
