@@ -281,43 +281,66 @@
 	=============================================== */
   $('#search-products').on('keyup', function () {
     var value = $(this).val().toLowerCase();
-    $('#product-list li').filter(function () {
-      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
+    $('.grid-container div').filter(function () {
+      const tagAttribute = $(this).attr('tag');
+      if (tagAttribute) {
+        $(this).toggle(tagAttribute.toLowerCase().indexOf(value) > -1);
+      }
     });
   });
 
-  /* ==============================================
-			CONTACT FORM
-		=============================================== */
-  jQuery(document).ready(function () {
-    $('#contact-form').submit(function () {
-      var action = $(this).attr('action');
-      $('#message').slideUp(750, function () {
-        $('#message').hide();
-        $('#submit').after('<img src="images/ajax-loader.gif" class="loader" />').attr('disabled', 'disabled');
-        $.post(
-          action,
-          {
-            first_name: $('#first_name').val(),
-            email: $('#email').val(),
-            phone: $('#phone').val(),
-            no_of_persons: $('#no_of_persons').val(),
-            preferred_food: $('#preferred_food').val(),
-            occasion: $('#occasion').val(),
-            verify: $('#verify').val(),
-          },
-          function (data) {
-            document.getElementById('message').innerHTML = data;
-            $('#message').slideDown('slow');
-            $('#contact-form img.loader').fadeOut('slow', function () {
-              $(this).remove();
-            });
-            $('#submit').removeAttr('disabled');
-            if (data.match('success') != null) $('#contact-form').slideUp('slow');
-          },
-        );
-      });
-      return false;
+  $('#cart').click(function () {
+    const shopList = [];
+    for (let i = 0; i < productList.length; i++) {
+      const qtyCell = $(`#q${i}`).text();
+      const qty = parseInt(qtyCell);
+      if (qty > 0) {
+        const itemDesc = $(`#i${i}`).text();
+        if (qty > 1) shopList.push(`${itemDesc} x(${qtyCell})`);
+        else shopList.push(itemDesc);
+      }
+    }
+    $('#shopping-clipboard').text(JSON.stringify(shopList, null, ' ')).select();
+    document.execCommand('copy');
+  });
+
+  $(document).ready(function () {
+    for (let i = 0; i < productList.length; i++) {
+      const item = productList[i];
+      if (item.startsWith('<h3>')) {
+        let headingCells = `
+          <div tag="${item}"></div>
+          <div tag="${item}">${item}</div>
+          <div tag="${item}"></div>
+          <div tag="${item}"></div>`;
+
+        $('.grid-container').append(headingCells);
+      } else {
+        let cells = `
+          <div class="grid-cell" id="m${i}" tag="${item}"><i class="fa fa-minus-square fa-2x" /></div>
+          <div class="grid-cell" id="i${i}" tag="${item}">${item}</div>
+          <div class="grid-cell" id="p${i}" tag="${item}"><i class="fa fa-plus-square fa-2x" /></div>
+          <div class="grid-cell" id="q${i}" tag="${item}">0</div>`;
+
+        $('.grid-container').append(cells);
+      }
+    }
+
+    $('.fa-minus-square, .fa-plus-square').click(function () {
+      const clickedGridCellId = $(this).parent().attr('id');
+      const selectedIndex = clickedGridCellId.substring(1, clickedGridCellId.length);
+      const cartQtyDiv = $(`#cart-qty`);
+      const cartQty = parseInt(cartQtyDiv.text());
+      const qtyDiv = $(`#q${selectedIndex}`);
+      const qty = parseInt(qtyDiv.text());
+
+      if (clickedGridCellId.startsWith('m') && qty > 0) {
+        qtyDiv.text(qty - 1);
+        cartQtyDiv.text(cartQty - 1);
+      } else if (clickedGridCellId.startsWith('p')) {
+        qtyDiv.text(qty + 1);
+        cartQtyDiv.text(cartQty + 1);
+      }
     });
   });
 })(jQuery);
