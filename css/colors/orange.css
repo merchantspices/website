@@ -47,10 +47,6 @@
   color: #e75b1e;
 }
 
-.item-type-zoom .item-hover:hover::before {
-  background: rgba(231, 91, 30, 0.5);
-}
-
 .special-box .owl-theme .owl-controls .owl-page.active span {
   background: #e75b1e;
 }

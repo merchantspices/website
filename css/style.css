@@ -258,11 +258,9 @@ body {
     HEADER AREA
 -------------------------------------------------------------------*/
 
-#site-header {
-}
+#site-header {}
 
-#header {
-}
+#header {}
 
 .logo {
   float: left;
@@ -276,8 +274,7 @@ body {
   left: 0;
 }
 
-.main-menu {
-}
+.main-menu {}
 
 .header-block-top .navbar-brand {
   margin: 0 !important;
@@ -382,7 +379,7 @@ body {
   padding: 10px 0 10px;
 }
 
-.fixed-menu .navbar-brand > img {
+.fixed-menu .navbar-brand>img {
   max-width: 150px;
 }
 
@@ -716,10 +713,11 @@ body {
 #owl-demo .item {
   margin: 15px;
   position: relative;
+  display: inline-block;
 }
 
 #owl-demo .item img {
-  display: block;
+  display: inline-block;
   width: 100%;
   height: auto;
 }
@@ -780,7 +778,7 @@ body {
 
 .item-type-zoom .item-info .dit-line {
   font-size: 14px;
-  font-style: italic;
+  font-style: bold;
 }
 
 .item-hover,
@@ -801,7 +799,7 @@ body {
   position: absolute;
   height: 100%;
   width: 100%;
-  background: rgba(231, 91, 30, 0.5);
+  background: rgba(0, 0, 0, 0.8);
   top: 0px;
   left: 0px;
 }
@@ -815,6 +813,7 @@ body {
 
 .special-box {
   padding-bottom: 40px;
+  text-align: center;
 }
 
 .special-box .owl-theme .owl-controls .owl-page.active span {
@@ -835,8 +834,7 @@ body {
     MENU AREA
 -------------------------------------------------------------------*/
 
-.menu-main {
-}
+.menu-main {}
 
 .menu-main .title-caption {
   color: #666;
@@ -1107,8 +1105,7 @@ body {
     GALLERY AREA
 -------------------------------------------------------------------*/
 
-.gallery-main {
-}
+.gallery-main {}
 
 .gallery-main .title-caption {
   color: #666;
@@ -1508,8 +1505,7 @@ body {
     RESERVATIONS AREA
 -------------------------------------------------------------------*/
 
-.reservations-main {
-}
+.reservations-main {}
 
 .form-reservations-box {
   width: 70%;
@@ -1654,8 +1650,7 @@ select:focus,
     FOOTER AREA
 -------------------------------------------------------------------*/
 
-.footer-main {
-}
+.footer-main {}
 
 .footer-news {
   background: url(../images/newsletter-bg.jpg) no-repeat center;
