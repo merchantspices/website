@@ -300,8 +300,12 @@
         else shopList.push(itemDesc);
       }
     }
-    $('#shopping-clipboard').text(JSON.stringify(shopList, null, ' ')).select();
+
+    var $temp = $('<input>');
+    $('body').append($temp);
+    $temp.val(JSON.stringify(shopList, null, ' ')).select();
     document.execCommand('copy');
+    $temp.remove();
   });
 
   $(document).ready(function () {
