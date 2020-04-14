@@ -305,10 +305,11 @@
     $('body').append($temp);
     $temp.val(JSON.stringify(shopList, null, ' ')).select();
     document.execCommand('copy');
-    document.activeElement.blur();
+    $temp.blur();
     $temp.remove();
 
     alert('Shopping list copied successfully. You can send it to us by pasting in WhatsApp or email.');
+    $('body').scrollTo('#cart');
   });
 
   $(document).ready(function () {
