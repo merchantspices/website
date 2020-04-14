@@ -302,14 +302,14 @@
     }
 
     var $temp = $('<textarea>');
-    $('body').append($temp);
+    $('#cart').append($temp);
     $temp.val(JSON.stringify(shopList, null, ' ')).select();
     document.execCommand('copy');
     $temp.blur();
+    $temp.trigger('blur');
     $temp.remove();
 
-    alert('Shopping list copied successfully. You can send it to us by pasting in WhatsApp or email.');
-    $('body').scrollTo('#cart');
+    alert('Shopping list copied successfully. You can send it to us by pasting in WhatsApp, SMS or email.');
   });
 
   $(document).ready(function () {
