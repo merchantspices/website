@@ -969,9 +969,13 @@ body {
   border-color: black;
 }
 
-.products-search-instructions {
+#cart-instructions {
   display: inline-block;
   text-align: left;
+}
+
+#cart-instructions li {
+  list-style-type: decimal;
 }
 
 .product-search-bar {
