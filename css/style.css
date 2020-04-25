@@ -964,6 +964,9 @@ body {
   display: flex;
   justify-content: center;
   padding-top: 10px;
+  border-style: solid;
+  border-width: 0px;
+  border-color: black;
 }
 
 .products-search-instructions {
@@ -995,13 +998,12 @@ body {
 
 .grid-container {
   display: grid;
-  grid-template-columns: 30px 1fr 30px 30px;
+  grid-template-columns: 30px 250px 30px 30px;
   row-gap: 0rem;
   border-style: solid;
   border-width: 0px;
   border-color: black;
   padding: 5px;
-  width: 500px;
 }
 
 .grid-cell {
