@@ -7,9 +7,13 @@
     Version: 1.0
 /****************************************** */
 
-@media (max-width: 1310px) {}
+@media (max-width: 1310px) {
+	#cart-instructions {
+		width: 400px;
+	}
+}
+
 @media (max-width: 1200px) {
-	 
 	.navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover {
 		background-color: transparent;
 	}
@@ -55,7 +59,6 @@
 		-moz-transform: rotate(-45deg);
 		-ms-transform: rotate(-45deg);
 	}
-	
 }
 @media (max-width: 1240px) {
 	.main-menu nav li a{
@@ -308,7 +311,9 @@
 	}
 }
 @media (max-width: 600px) {
-	
+	#cart-instructions {
+		width: 100%;
+	}
 }
 @media (max-width: 480px) {
 	.offer-item img{
