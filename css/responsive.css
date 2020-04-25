@@ -7,7 +7,9 @@
     Version: 1.0
 /****************************************** */
 
-@media (max-width: 1310px) {
+@media (max-width: 1310px) {}
+
+@media only screen and (min-width: 1224px) {
 	#cart-instructions {
 		width: 400px;
 	}
